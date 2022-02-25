@@ -1,13 +1,14 @@
 {
   "name": "aws-control",
   "version": "0.0.2",
-  "description": "",
-  "main": "index.js",
+  "main": "build/services/index.js",
   "bin": {
-    "aws-quotas": "./build/cli.js"
+    "aws-control": "build/cli.js"
   },
   "scripts": {
     "build": "tsc",
+    "prepare": "npm install -g nodemon ts-node typescript",
+    "dev": "nodemon src/cli.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "package": "pkg . --targets node14-macos-x64 --output aws-quotas"
   },
@@ -25,6 +26,16 @@
   },
   "dependencies": {
     "@aws-sdk/client-service-quotas": "^3.52.0",
+    "@aws-sdk/credential-providers": "^3.52.0",
     "yargs": "^17.3.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niradler/aws-control.git"
+  },
+  "bugs": {
+    "url": "https://github.com/niradler/aws-control/issues"
+  },
+  "homepage": "https://github.com/niradler/aws-control#readme",
+  "description": ""
 }
